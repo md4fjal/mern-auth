@@ -24,7 +24,9 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(cookieParser());
 
 import userRouter from "./routes/user.route.js";
+import auditRouter from "./routes/audit.route.js";
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/audit", auditRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello");
